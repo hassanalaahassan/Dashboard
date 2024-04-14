@@ -1,0 +1,99 @@
+<section class="my-4">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="inner text-white d-flex justify-content-center align-items-center">
+        <div class="d-flex flex-wrap justify-content-center align-content-center">
+          <h2 class="d-block w-100">Grand Tasks</h2>
+          <p class="d-block h6">To assign tasks for your users or employees</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 d-flex justify-content-center align-items-center mt-2 mt-md-0">
+      <div class="inner">
+        <form class="d-flex flex-wrap justify-content-center align-items-center" [formGroup]="registerForm" (submit)="hundelRegisterForm()">
+          <h2 class="h4 my-skew"><span>Register</span></h2>
+          <div class="inputGroup">
+            <input type="email" required="" autocomplete="off" formControlName="email">
+            <label for="email">E-mail</label>
+            <div class="notifications-container my-1 mx-auto" *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.errors">
+              <div class="error-alert">
+                <div class="flex">
+                  <div class="error-prompt-container">
+                    <p class="error-prompt-heading">E-mail must be
+                    </p>
+                    <div class="error-prompt-wrap">
+                      <ul class="error-prompt-list" role="list">
+                        <li *ngIf="registerForm.get('email')?.getError('required')">is required </li>
+                        <li *ngIf="registerForm.get('email')?.getError('email')">in E-mail format</li>
+                      </ul>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="inputGroup">
+            <input type="username" required="" autocomplete="off" formControlName="username">
+            <label for="username">User name</label>
+            <div>
+              <div class="notifications-container my-1 mx-auto" *ngIf="registerForm.get('username')?.touched && registerForm.get('username')?.errors">
+                <div class="error-alert">
+                  <div class="flex">
+                    <div class="error-prompt-container">
+                      <p class="error-prompt-heading">username must be
+                      </p><div class="error-prompt-wrap">
+                        <ul class="error-prompt-list" role="list">
+                          <li *ngIf="registerForm.get('username')?.getError('required')">Required</li>
+                        </ul>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="inputGroup">
+            <input type="password" required="" autocomplete="off" formControlName="password">
+            <label for="password">Password</label>
+            <div>
+              <div class="notifications-container my-1 mx-auto" *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.errors">
+                <div class="error-alert">
+                  <div class="flex">
+                    <div class="error-prompt-container">
+                      <p class="error-prompt-heading">password must be
+                      </p><div class="error-prompt-wrap">
+                        <ul class="error-prompt-list" role="list">
+                          <li *ngIf="registerForm.get('password')?.getError('required')">Password required</li>
+                          <li *ngIf="registerForm.get('password')?.getError('password')">Password must be at least !6 characters</li>
+                        </ul>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+            <div class="d-flex flex-column align-items-center justify-content-center">
+              <button type="submit" class="submit-btn">
+                <i class="fa-solid fa-arrow-right arr-2"></i>
+                <span class="text">Create new account</span>
+                <span class="circle"></span>
+                <i class="fa-solid fa-arrow-right arr-1"></i>
+              </button>
+              <p role="button" class="h6 my-2" routerLink="/login">Already have account?</p>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<!--
+  <button class="animated-button">
+  <i class="fa-solid fa-arrow-right arr-2"></i>
+  <span class="text">LOG IN</span>
+  <span class="circle"></span>
+  <i class="fa-solid fa-arrow-right arr-1"></i>
+</button>
+<button class="submit-btn">Log in</button>
+
+ -->

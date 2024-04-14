@@ -1,0 +1,21 @@
+<div class="p-4 rounded-2">
+  <header>
+    <h2>IF You Click Yes You Will Discard All Changes ?</h2>
+  </header>
+  <footer>
+    <div class="d-flex justify-content-evenly align-items-center">
+      <button class="submit-btn" (click)="confirm()">
+        <i class="fa-solid fa-arrow-right arr-2"></i>
+        <span class="text">Yes</span>
+        <span class="circle"></span>
+        <i class="fa-regular fa-thumbs-up"></i>
+      </button>
+      <button class="close-btn" (click)="close()">
+        <i class="fa-solid fa-arrow-right arr-2"></i>
+        <span class="text">No</span>
+        <span class="circle"></span>
+        <i class="fa-regular fa-thumbs-down"></i>
+      </button>
+    </div>
+  </footer>
+</div>

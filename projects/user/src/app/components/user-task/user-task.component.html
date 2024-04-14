@@ -1,0 +1,61 @@
+<section class="my-4">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6" *ngFor="let task of allTasks.reverse()">
+        <!-- <div class="inner">
+          <div class="card-container">
+            <div class="card">
+            <div class="front-content flex-column justify-content-center align-items-center">
+              <p>{{task.title}}</p>
+             <div class="d-flex justify-content-center align-items-center">
+              <span class="h6">DeadLine : {{task.deadline}}</span>
+             </div>
+            </div>
+            <div class="content">
+              <p class="heading">{{task.title}}</p>
+              <p>
+                {{task.description}}
+              </p>
+            </div>
+          </div>
+          </div>
+          <div class="w-100 z-3 d-flex justify-content-between align-items-center p-1">
+            <button class="noselect" ><span class="text">Delete</span><span class="icon"><i class="fa-solid fa-circle-info text-white"></i></span></button>
+            <button class="noselect complete" (click)="complete(task)"><span class="text">Complete</span><span class="icon"><i class="fa-solid fa-check text-white fs-2"></i></span></button>
+          </div>
+        </div> -->
+        <div class="card">
+          <div class="content">
+            <p class="heading">{{task.title}}</p>
+            <div class="d-flex flex-column para">
+              <p>
+                {{task.description.split(' ').splice(0,18).join(' ')}}
+               </p>
+
+               <div class="d-flex flex-column">
+                <span><i class="fa-regular fa-clock"></i> {{task.deadline}}</span>
+                <span><i class="fa-solid fa-rotate"></i> {{(task.status)}}</span>
+               </div>
+               <div class="footer d-flex justify-content-between align-items-center">
+                <button class="green-btn" (click)="complete(task)">Complete</button>
+                <span role="button" [routerLink]="['/detailes',task._id]" mat-button matTooltip="Click For More" matTooltipPosition="before"><i class="fa-solid fa-circle-info "></i></span>
+               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex align-items-center justify-content-center">
+      <pagination-controls  id="task"
+                      (pageChange)="pageChanged($event)"
+                      (pageBoundsCorrection)="pageChanged($event)"
+                      [responsive]="true"
+                      [autoHide]="true"
+                      screenReaderPaginationLabel="Pagination"
+                      screenReaderPageLabel="page"
+                      screenReaderCurrentLabel="You're on page">
+</pagination-controls>
+    </div>
+  </div>
+</section>
+

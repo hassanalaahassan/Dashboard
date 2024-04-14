@@ -1,0 +1,79 @@
+ <header class="p-4">
+  <div class="head d-flex justify-content-between align-items-center">
+    <h3 class="m-0 fw-bolder">Add new Task</h3>
+    <div mat-dialog-actions>
+      <div (click)="confirmation()"><i role="button" class="fa-solid fa-xmark text-danger fs-4"></i>
+      </div>
+    </div>
+  </div>
+ <form [formGroup]="newTask">
+  <div class="body my-2 d-flex flex-column">
+    <mat-form-field >
+      <mat-label class="form-data">Title</mat-label>
+      <input matInput placeholder="Ex. Front end project" class="form-data" formControlName="title">
+    </mat-form-field>
+    <mat-form-field >
+      <mat-label>Users</mat-label>
+      <mat-select formControlName="userId" class="text-white">
+        <mat-option *ngFor=" let user of users" class="" [value]="user._id">
+          {{user.username}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div class="my-image my-2 d-flex justify-content-evenly align-items-center">
+      <label for="select-image" class="open-file">
+        <span class="file-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 71 67">
+            <path
+              stroke-width="5"
+              stroke="black"
+              d="M41.7322 11.7678L42.4645 12.5H43.5H68.5V64.5H2.5V2.5H32.4645L41.7322 11.7678Z"
+            ></path>
+          </svg>
+          <span class="file-front"></span>
+        </span>
+        Open file
+      </label>
+      <span>{{imageName}}</span>
+      <input type="file" (change)="getImageName($event)" id="select-image" hidden>
+    </div>
+    <mat-form-field>
+      <mat-label>Choose a date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="deadline">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Leave a comment</mat-label>
+      <textarea matInput placeholder="Ex. Must be recevid before 10/10/2024..." formControlName="description"></textarea>
+    </mat-form-field>
+    <div>
+
+      <div class="d-flex justify-content-evenly align-items-center">
+        <button (click)="this.handelNewTaskForm()" class="submit-btn" *ngIf="!this.isLoading && !data">
+          <i class="fa-solid fa-arrow-right arr-2"></i>
+          <span class="text">ADD</span>
+          <span class="circle"></span>
+          <i class="fa-solid fa-arrow-right arr-1"></i>
+        </button>
+        <button (click)="this.update()" class="submit-btn" *ngIf="!this.isLoading&& data">
+          <i class="fa-solid fa-arrow-right arr-2"></i>
+          <span class="text">Update</span>
+          <span class="circle"></span>
+          <i class="fa-solid fa-arrow-right arr-1"></i>
+        </button>
+        <button class="close-btn" *ngIf="!this.isLoading" (click)="confirmation()">
+          <i class="fa-solid fa-arrow-right arr-2"></i>
+          <span class="text">Close</span>
+          <span class="circle"></span>
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div *ngIf="this.isLoading">
+        <i class="fa-solid fa-spinner fa-spin" ></i>
+      </div>
+    </div>
+  </div>
+ </form>
+</header>

@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-lg shadow-sm">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink=""> <span> Grand Tasks
+    </span></a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse flex-column-reverse" id="navbarSupportedContent">
+      <ul class="example-2 navbar-nav ms-auto mb-2 mb-lg-0 ">
+        <li class="icon-content nav-item my-5 my-lg-0" (click)="changeLanguage()">
+          <a
+            data-social="lang"
+            aria-label="lang"
+            routerLink="/lang"
+            class="nav-link"
+          >
+            <div class="filled"></div>
+            <i fill="currentColor" class="fa-solid fa-language"></i>
+          </a>
+          <div class="tooltip">{{lang == 'en' ? "عربي" : "English"}}</div>
+        </li>
+        <li class="icon-content nav-item my-5 my-lg-0">
+          <a
+            data-social="login"
+            aria-label="login"
+            routerLink="/login"
+            class="nav-link"
+          >
+            <div class="filled"></div>
+
+              <i fill="currentColor" class="fa-regular fa-user fa-2xs"></i>
+          </a>
+          <div class="tooltip">Login</div>
+        </li>
+        <li class="icon-content nav-item my-5 my-lg-0">
+          <a
+            data-social="register"
+            aria-label="register"
+            routerLink="/register"
+            class="nav-link"
+          >
+            <div class="filled"></div>
+              <i fill="currentColor" class="fa-solid fa-id-card fa-2xs"></i>
+          </a>
+          <div class="tooltip">Register</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

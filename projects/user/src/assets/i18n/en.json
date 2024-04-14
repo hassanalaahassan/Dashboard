@@ -1,0 +1,63 @@
+{
+
+  "lang":{
+    "current":"عربي"
+  },
+
+  "task":{
+    "addTask":"Add Task",
+    "allTasks":"All-Tasks",
+    "title":"Title",
+    "description":"Description",
+    "deadLine":"Deadline ",
+    "user":"User",
+    "openFile":"Open file"
+  },
+  "common":{
+    "add":"Add",
+    "close":"Close",
+    "delete":"Delete",
+    "update":"Update"
+  },
+  "table":{
+    "status":"Status",
+    "inProgress":"In-Progress",
+    "complete":"Complete",
+    "rangeDate":"Enter a date range",
+    "search":"Search by user"
+  },
+  "nav":{
+    "users":"Users",
+    "signOut":"Sign-out"
+  },
+  "auth":{
+    "login":"Login",
+    "dontHaveAcc":"Don't have account?",
+    "brief":"To assign tasks for your users or employees",
+    "register":"Register",
+    "email":"E-mail",
+    "password":"Password",
+    "enter":"LOG IN"
+  },
+  "error":{
+    "email":{
+      "head":"E-mail must be",
+      "message1":"is required",
+      "message2":"in E-mail format"
+    },
+    "password":{
+      "head":"Password must be",
+      "message1":"is required",
+      "message2":"Password must be at least !6 characters"
+    }
+
+
+
+  }
+
+
+
+
+
+
+}
