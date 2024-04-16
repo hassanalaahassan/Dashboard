@@ -166,12 +166,6 @@
                   "maximumError": "5mb"
                 }
               ],
-              "fileReplacements": [
-              {
-                "replace" : "../workS/projects/admin/src/app/environments/environment.ts" ,
-                "with" : "../workS/projects/admin/src/app/environments/environment.prod.ts"
-              }
-              ],
               "outputHashing": "all"
             },
             "development": {
