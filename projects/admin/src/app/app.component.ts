@@ -13,13 +13,13 @@ export class AppComponent {
   constructor(private _translate: TranslateService) {
     if("language" in localStorage){
       this.language = localStorage.getItem('language')
-      console.log(this.language);
-
       _translate.use(this.language);
     }
     else
     {
-      _translate.use('en')
+      localStorage.setItem('language','en')
+      this.language = localStorage.getItem('language')
+      _translate.use(this.language)
     }
   }
 }

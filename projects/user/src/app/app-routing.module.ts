@@ -10,17 +10,19 @@ import { DetailesComponent } from './components/detailes/detailes.component';
 import { ErrorComponent } from './components/error/error.component';
 
 const routes: Routes = [
+  {path:'',canActivate:[authGuard],component:BlankComponent,children:[
+    {path:'user-task',component:UserTaskComponent,title:'Tasks'},
+    {path:'detailes/:id',component:DetailesComponent,title:'Task-Detailes'}
+  ]},
   {path:'',component:AuthComponent,children:[
     {path:'login',component:LoginComponent,title:'Login'},
     {path:'register',component:RegisterComponent,title:'Register'},
-    // {path:'',component:ErrorComponent,title:'404'},
+    {path:'',redirectTo:'login',pathMatch:'full'},
 
   ]},
-  {path:'',canActivate:[authGuard],component:BlankComponent,children:[
-    {path:'user-task',component:UserTaskComponent,title:'Tasks'},
-    {path:'detailes/:id',component:DetailesComponent,title:'Task-Detailes'},
-    {path:'**',component:ErrorComponent,title:'404'},
-  ]},
+  {path:'',children:[
+    {path:'**',component:ErrorComponent,title:'404'}
+  ]}
 
 ];
 
