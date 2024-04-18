@@ -39,7 +39,7 @@ export class AlltasksComponent implements OnInit {
   });
 
   page: number = 1;
-  tasks:Tasks[]=[]
+  allTasks:Tasks[]=[]
   term:string=""
   filteration:any={
     page:this.page,
@@ -70,6 +70,7 @@ export class AlltasksComponent implements OnInit {
     this._UsersService.users.subscribe({
       next:(response)=>{
         this.users = response
+
       }
     })
   }
@@ -77,9 +78,14 @@ export class AlltasksComponent implements OnInit {
 
     this._TasksService.getAllTasks(this.filteration).subscribe({
       next:(response)=>{
-        this.tasks=response.tasks
+        this.allTasks=this.filterTasks(response.tasks)
       }
     })
+  }
+  filterTasks(tasks:Tasks[]):any{
+    // let arr = tasks.map((task)=> task.userId!=null)
+    let arr = tasks.filter((task)=>task.userId!=null)
+    return arr
   }
 
   openWindow(): void {

@@ -14,13 +14,13 @@ const routes: Routes = [
   {path:'',canActivate:[loginGuard],component:BlankComponent,children:[
     {path:'all-tasks',component:AlltasksComponent,title:'All-Tasks'},
     {path:'users',component:UsersComponent,title:'Users'},
-    {path:'',component:ErrorComponent,title:'404'}
+    // {path:'',component:ErrorComponent,title:'404'}
   ]},
  {path:'',component:AuthComponent,children:[
   // {path:'',redirectTo:'login',pathMatch:'full'},
   {path:'login',component:LoginComponent,title:'Login'},
   {path:'register',component:RegisterComponent,title:'register'},
-  {path:'',component:ErrorComponent,title:'404'}
+  // {path:'',component:ErrorComponent,title:'404'}
 
  ]}
 ];

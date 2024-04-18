@@ -75,6 +75,14 @@ import { ErrorComponent } from './componants/error/error.component';
     FormsModule,
     NgxPaginationModule,
     HttpClientModule,
+    TranslateModule.forRoot({
+      defaultLanguage:'en',
+        loader: {
+            provide: TranslateLoader,
+            useFactory: HttpLoaderFactory,
+            deps: [HttpClient]
+        }
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

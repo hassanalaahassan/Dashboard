@@ -50,10 +50,10 @@
     <th  class="p-2 stat">Status</th>
   </thead>
   <tbody>
-    <tr *ngFor="let task of tasks|search:term | paginate: { id: 'task',
+    <tr *ngFor="let task of allTasks|search:term | paginate: { id: 'task',
     itemsPerPage: 5,
     currentPage: page,
-    totalItems: tasks.length}; index as i">
+    totalItems: allTasks.length}; index as i">
       <td>{{i+1}}</td>
       <td>{{task.title}}</td>
       <td>{{task.userId.username}}</td>
