@@ -302,3 +302,11 @@
   margin-top: 0.25rem;
   list-style-type: disc;
 }
+@media screen and (max-width:768px) {
+  .col-md-8 .inner{
+    background: linear-gradient(45deg, #5a189a, #03045e);
+    border-radius: 15px;
+    min-height: 30vh;
+    max-height: 30vh;
+  }
+}

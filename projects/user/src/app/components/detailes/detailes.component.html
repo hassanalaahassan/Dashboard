@@ -1,7 +1,7 @@
 <section class="my-4">
   <div class="container">
     <div class="row">
-      <div class="col-8 shadow-sm p-2 offset-2">
+      <div class="col-md-8 shadow-sm p-2 mx-auto">
         <div class="col-12">
           <div class="inner rounded-2">
             <img src="../../../assets/image/image.jpg" class="w-100 rounded-2" alt="">
@@ -10,15 +10,15 @@
         <div class="col-12 my-2">
           <div class="inner d-flex justify-content-between flex-wrap">
             <div class="d-flex align-items-baseline flex-column w-100 mb-4">
-              <span class="my-span text-center mb-1">About Task : </span><span class=" fw-bold fs-5"> {{myTask.description}} Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium aspernatur molestiae culpa tempore unde quos eos? Debitis atque ipsa pariatur totam sapiente sed numquam, possimus doloribus consequuntur vel earum laborum!</span>
+              <span class="my-span text-center mb-1">About Task : </span><span class=" fw-bold fs-5"> {{myTask.description}}</span>
             </div>
-            <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center my-2">
               <span class="my-span text-center me-1">Create in :  </span><span> {{myTask.createdAt.split('T')[0]}}</span>
             </div>
-            <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center my-2">
               <span class="my-span text-center me-1">DeadLine : </span><span> {{myTask.deadline}}</span>
             </div>
-            <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center my-2">
               <span class="my-span text-center me-1">Status : </span><span class=" fw-bold"> {{myTask.status}}</span>
             </div>
           </div>
