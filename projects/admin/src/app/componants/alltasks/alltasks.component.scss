@@ -197,3 +197,40 @@ li .pagination-next {
   padding: .1875rem .625rem;
   border-radius: 0;
 }
+@media screen and (max-width:600px){
+  table{
+    tbody, td, tfoot, th, thead, tr {
+      border-color: inherit;
+      border-style: solid;
+      border-width: 0;
+      font-size: 7px!important;
+  }
+  }
+  .noselect {
+    width: 60px;
+    height: 40px;
+   }
+   .noselect .text {
+    transform: translateX(5px);
+    color: white;
+    font-weight: bold;
+   }
+   .noselect .icon {
+    position: absolute;
+    border-left: 1px solid #c41b1b;
+    transform: translateX(30px);
+    height: 20px;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   }
+   .noselect:hover .icon {
+    width: 50px;
+    border-left: none;
+    transform: translateX(0);
+   }
+   .respo{
+    font-size: 10px;
+   }
+}

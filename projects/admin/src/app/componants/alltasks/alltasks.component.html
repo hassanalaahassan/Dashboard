@@ -12,7 +12,7 @@
  </button>
 </div>
 </header>
-<div class="hero d-flex align-items-center justify-content-evenly">
+<div class="hero w-100 d-flex align-items-center justify-content-evenly">
   <mat-form-field>
     <mat-label>User</mat-label>
     <mat-select class="text-white" (selectionChange)="userSelected($event)">
@@ -36,18 +36,19 @@
       <input matStartDate formControlName="start" placeholder="Start date" (dateChange)="selectDate($event,'fromDate')">
       <input matEndDate formControlName="end" placeholder="End date"  (dateChange)="selectDate($event,'toDate')">
     </mat-date-range-input>
-    <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+    <mat-hint class="respo">MM/DD/YYYY – MM/DD/YYYY</mat-hint>
     <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-date-range-picker #picker></mat-date-range-picker>
   </mat-form-field>
 </div>
-<table class="my-5 table-responsive text- text-center shadow-sm">
+<table class="my-5 table-responsive text-center shadow-sm">
   <thead class="table-purple w-100 text-white">
     <th class="p-2 id">NO.</th>
     <th class="p-2">Title</th>
     <th  class="p-2">User</th>
     <th  class="p-2 ">Deadline</th>
-    <th  class="p-2 stat">Status</th>
+    <th  class="p-2 ">Status</th>
+    <th  class="p-2 stat">Actions</th>
   </thead>
   <tbody>
     <tr *ngFor="let task of allTasks|search:term | paginate: { id: 'task',
